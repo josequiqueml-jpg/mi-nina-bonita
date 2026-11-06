@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Escribir ♡</title>
+<style>body{font:16px/1.5 system-ui,sans-serif;background:#fff0f5;color:#704657;max-width:480px;margin:0 auto;padding:22px}h1{font-family:Georgia,serif;font-weight:500;color:#8d4e68}input,textarea,button{width:100%;font:inherit;padding:12px;margin:6px 0;border:1px solid #e9b5c9;border-radius:12px;background:#fff;color:inherit}button{background:#df8eac;color:#fff;border:0;font-weight:700}details{margin:14px 0}#msg{font-weight:600}</style></head><body>
+<h1>Cosa #<span id="n">?</span> ♡</h1>
+<textarea id="t" rows="4" placeholder="Hoy amo de ti..."></textarea>
+<input id="f" type="date">
+<button id="go">Publicar</button><p id="msg"></p>
+<details id="cfg"><summary>Configuración (una sola vez)</summary>
+<input id="u" placeholder="Usuario de GitHub"><input id="r" placeholder="Nombre del repositorio"><input id="b" placeholder="Rama (main)"><input id="k" type="password" placeholder="Token de GitHub"><button id="sv">Guardar</button></details>
+<script>
+const $=i=>document.getElementById(i),L=JSON.parse(localStorage.getItem("cfg")||"{}");
+const hoy=()=>{const d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")};
+$("f").value=hoy();$("u").value=L.u||"";$("r").value=L.r||"";$("b").value=L.b||"main";$("k").value=L.k||"";
+if(!L.k)$("cfg").open=true;
+$("sv").onclick=()=>{localStorage.setItem("cfg",JSON.stringify({u:$("u").value.trim(),r:$("r").value.trim(),b:$("b").value.trim()||"main",k:$("k").value.trim()}));location.reload()};
+const url=()=>`https://api.github.com/repos/${L.u}/${L.r}/contents/cosas.js`;
+const hd={Authorization:"Bearer "+L.k,Accept:"application/vnd.github+json","Content-Type":"application/json"};
+async function leer(){
+ const r=await fetch(url()+"?ref="+L.b+"&t="+Date.now(),{headers:hd});
+ if(r.status===404)return{arr:[],sha:null};
+ if(!r.ok)throw new Error("No pude leer (revisa token/usuario/repo): "+r.status);
+ const j=await r.json(),txt=new TextDecoder().decode(Uint8Array.from(atob(j.content.replace(/\n/g,"")),c=>c.charCodeAt(0)));
+ return{arr:JSON.parse(txt.slice(txt.indexOf("["),txt.lastIndexOf("]")+1)),sha:j.sha};
+}
+if(L.k)leer().then(d=>$("n").textContent=d.arr.length+1).catch(e=>$("msg").textContent=e.message);
+$("go").onclick=async()=>{
+ const t=$("t").value.trim();if(!t)return;
+ $("msg").textContent="Publicando...";
+ try{
+  const d=await leer();
+  if(d.arr.length>=100)throw new Error("Ya llegaste a las 100 ♡");
+  d.arr.push({fecha:$("f").value||hoy(),texto:t});
+  const body="window.COSAS = "+JSON.stringify(d.arr,null,2)+";\n",bytes=new TextEncoder().encode(body);
+  const b64=btoa(Array.from(bytes,c=>String.fromCharCode(c)).join(""));
+  const r=await fetch(url(),{method:"PUT",headers:hd,body:JSON.stringify({message:"Cosa #"+d.arr.length,content:b64,sha:d.sha||undefined,branch:L.b})});
+  if(!r.ok)throw new Error("No pude guardar: "+r.status);
+  $("msg").textContent="¡Listo! Cosa #"+d.arr.length+" publicada. Aparece en 1-2 min ♡";$("t").value="";$("n").textContent=d.arr.length+1;
+ }catch(e){$("msg").textContent=e.message}
+};
+</script></body></html>

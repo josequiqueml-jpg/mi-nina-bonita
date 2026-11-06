@@ -1,0 +1,16 @@
+MI NIÑA BONITA — versión 4
+1. Abre index.html en un navegador moderno.
+2. La carpeta fotos contiene las seis fotografías compartidas.
+3. Los contadores calculan los días desde la primera cita (26/12/2025) y desde que son novios (01/03/2026).
+4. El sobre tiene una animación al tocarlo y muestra la carta.
+5. Las fotografías se pueden tocar para ampliarlas; cierra con la X, tocando fuera o con Escape.
+6. Reproductor integrado de YouTube para A Thousand Years (el botón de arriba abre el video).
+7. El botón secreto revela la dedicatoria del 1 de marzo.
+8. Para publicar la página, sube el contenido de esta carpeta a un repositorio de GitHub y activa GitHub Pages desde Settings > Pages.
+
+--- NOVEDADES v5 ---
+9. 100 cosas que amo de ti: se leen de cosas.js. Se agregan desde escribir.html (ver abajo) o editando cosas.js en GitHub.
+10. Más fotos: copia las imágenes a /fotos y agrega una línea en fotos.js.
+11. escribir.html: tu panel privado. Abre TU_USUARIO.github.io/TU_REPO/escribir.html, pega tu token de GitHub una sola vez
+    (Settings > Developer settings > Fine-grained tokens > solo ese repo > Contents: Read and write) y escribe la cosa del día.
+    El sitio se actualiza en 1-2 minutos. Nunca compartas el token.

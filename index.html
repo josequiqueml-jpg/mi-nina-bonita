@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff0f5">
+  <title>Para mi niña bonita ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <div class="floating-hearts" aria-hidden="true"></div>
+  <header class="topbar"><span>♡ UN DETALLITO HECHO CON AMOR ♡</span><a class="music-btn" href="https://youtu.be/rtOvBOTyX00" target="_blank" rel="noopener">♫ <span>Escuchar nuestra canción</span></a></header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="tiny-label">PARA ALGUIEN MUY ESPECIAL</div>
+      <div class="hero-heart">♡</div>
+      <h1>Para mi<br><em>niña bonita</em></h1>
+      <p class="intro">Preparé un pequeño rincón de internet<br>para guardar un poquito de lo mucho que te quiero.</p>
+      <button class="primary-btn" id="startBtn">Descubrir mi regalito <span>♡</span></button>
+      <div class="signature">con amor, <b>Kikin ♡</b></div>
+      <div class="scroll-hint">DESPACITO, HAY MÁS ABAJO ↓</div>
+    </section>
+
+    <section class="section counter-section" id="historia">
+      <div class="section-kicker">NUESTRA HISTORIA</div>
+      <h2>Dos fechas, una historia</h2>
+      <p class="section-lead">Hay días que se quedan a vivir en el corazón.</p>
+      <div class="date-grid">
+        <article class="date-card">
+          <span class="date-icon">✿</span><div class="date">26 · 12 · 2025</div>
+          <h3>Nuestra primera cita</h3><p>El día en que comenzó esta pequeña aventura.</p>
+          <div class="counter"><strong id="firstDays">—</strong><span>días desde aquel día</span></div>
+        </article>
+        <article class="date-card featured">
+          <span class="date-icon">♡</span><div class="date">01 · 03 · 2026</div>
+          <h3>Desde que somos novios</h3><p>El día que empezamos a elegirnos oficialmente.</p>
+          <div class="counter"><strong id="coupleDays">—</strong><span>días eligiéndonos</span></div>
+        </article>
+      </div>
+      <p class="little-note">Y todavía nos quedan muchísimos recuerdos por crear. ♡</p>
+      <div class="song-note">
+        <span class="song-heart">♫</span>
+        <p>Esta canción siempre me va a recordar<br><em>el día en que te pedí que fueras mi novia.</em></p>
+        <a href="https://youtu.be/rtOvBOTyX00" target="_blank" rel="noopener">Escuchar A Thousand Years en YouTube ♡</a>
+      </div>
+      <div class="spotify-wrap">
+        <div class="section-kicker">NUESTRA CANCIÓN</div>
+        <h3>Un recuerdo que suena a ti ♡</h3>
+        <p class="section-lead">Puedes escucharla aquí mismo ♡</p>
+        <iframe class="spotify-player" src="https://www.youtube.com/embed/rtOvBOTyX00" width="100%" height="230" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" title="A Thousand Years"></iframe>
+      </div>
+      <div class="secret-wrap">
+        <p class="secret-hint">Pssst... todavía hay algo más ♡</p>
+        <button class="secret-btn" id="secretBtn" aria-expanded="false" aria-controls="secretMessage">¿Quieres saber un secreto?</button>
+        <div class="secret-message hidden" id="secretMessage" aria-live="polite">
+          <span class="secret-sparkle">✧</span>
+          <p>Desde aquel 1 de marzo, mi canción favorita dejó de ser solamente una canción. Ahora también es un recuerdo contigo.</p>
+          <b>Y qué bonito que seas tú mi recuerdo favorito. ♡</b>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gallery-section" id="recuerdos">
+      <div class="section-kicker">PEDACITOS DE NOSOTROS</div>
+      <h2>Mis personas favoritas</h2>
+      <p class="section-lead">Tú, yo y todos esos momentos que quiero guardar.</p>
+      <div class="portrait-grid">
+        <figure class="polaroid tilt-left"><img src="fotos/ella.jpeg" alt="Retrato de mi niña bonita"><figcaption>Mi niña bonita ♡</figcaption></figure>
+        <figure class="polaroid tilt-right"><img src="fotos/kikin.jpeg" alt="Retrato de Kikin"><figcaption>Tu Kikin ♡</figcaption></figure>
+      </div>
+      <div class="together-title">Y entonces, <em>nosotros...</em></div>
+      <div class="photo-grid" id="photoGrid"></div>
+    </section>
+
+    <section class="section cien-section" id="cien">
+      <div class="section-kicker">CADA DÍA, UNA MÁS</div>
+      <h2>100 cosas que amo de ti</h2>
+      <p class="section-lead">Escribo una nueva todos los días.<br>Vuelve a visitarme seguido ♡</p>
+      <div class="cien-progress"><strong id="cienCount">0</strong><span>de 100</span></div>
+      <div class="cien-bar"><i id="cienBar"></i></div>
+      <article class="cien-card" id="cienCard"></article>
+      <p class="cien-tap">Toca un número para leerla</p>
+      <div class="cien-grid" id="cienGrid"></div>
+      <p class="cien-hint" id="cienHint"></p>
+    </section>
+
+    <section class="section letter-section" id="carta">
+      <div class="section-kicker">UNAS PALABRITAS PARA TI</div>
+      <h2>Una carta de Kikin</h2>
+      <p class="section-lead">Hay cosas que quiero que puedas leer cuantas veces quieras.</p>
+      <button id="openLetter" class="envelope" aria-label="Abrir la carta">
+        <span class="envelope-flap"></span><span class="envelope-heart">♥</span><span class="envelope-text">Toca para abrir</span>
+      </button>
+      <article class="letter hidden" id="letter">
+        <div class="letter-top">♡ PARA MI NIÑA BONITA ♡</div>
+        <div id="letterText"></div>
+        <div class="letter-sign">Con todo mi amor,<br><b>Kikin ♡</b></div>
+      </article>
+    </section>
+
+    <div class="lightbox hidden" id="lightbox" role="dialog" aria-modal="true" aria-label="Fotografía ampliada">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar fotografía">×</button>
+      <img id="lightboxImage" src="" alt="Fotografía ampliada">
+      <p id="lightboxCaption"></p>
+    </div>
+    <footer><div class="footer-heart">♥</div><h2>Si pudiera volver al principio,<br><em>volvería a elegirte.</em></h2><p>Hecho con amor por Kikin ♡</p><span>FIN... O MÁS BIEN, OTRO COMIENZO.</span></footer>
+  </main>
+  <script src="fotos.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
