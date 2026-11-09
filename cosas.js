@@ -14,5 +14,9 @@ window.COSAS = [
   {
     "fecha": "2026-11-07",
     "texto": "tu independencia"
+  },
+  {
+    "fecha": "2026-11-07",
+    "texto": "La forma en que me haces sentir amado todos los dias"
   }
 ];
