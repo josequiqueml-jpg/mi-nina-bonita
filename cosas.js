@@ -22,5 +22,9 @@ window.COSAS = [
   {
     "fecha": "2026-11-11",
     "texto": "La determinación con la que haces las cosas"
+  },
+  {
+    "fecha": "2026-11-11",
+    "texto": "Lo dispuesta que estas a cumplir tus sueños"
   }
 ];
