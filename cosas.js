@@ -34,5 +34,9 @@ window.COSAS = [
   {
     "fecha": "2026-11-13",
     "texto": "La sinceridad de tu amor"
+  },
+  {
+    "fecha": "2026-11-16",
+    "texto": "Amo tu confianza, tanto en ti misma como en mi"
   }
 ];
