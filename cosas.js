@@ -62,5 +62,9 @@ window.COSAS = [
   {
     "fecha": "2026-11-21",
     "texto": "Tu manera de buscar que ambos progresemos siempre"
+  },
+  {
+    "fecha": "2026-11-21",
+    "texto": "Lo agradecida que eres siempre"
   }
 ];
