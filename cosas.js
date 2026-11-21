@@ -54,5 +54,9 @@ window.COSAS = [
   {
     "fecha": "2026-11-21",
     "texto": "Tu compañia"
+  },
+  {
+    "fecha": "2026-11-21",
+    "texto": "Tu cuerpo"
   }
 ];
