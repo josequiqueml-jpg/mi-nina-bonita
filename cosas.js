@@ -66,5 +66,9 @@ window.COSAS = [
   {
     "fecha": "2026-11-21",
     "texto": "Lo agradecida que eres siempre"
+  },
+  {
+    "fecha": "2026-11-25",
+    "texto": "Que tu existencia hace que el mundo se sienta mas bonito"
   }
 ];
