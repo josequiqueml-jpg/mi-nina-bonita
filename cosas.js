@@ -78,5 +78,9 @@ window.COSAS = [
   {
     "fecha": "2026-11-25",
     "texto": "Amo que siempre extraño tu compañia, incluso cuando acabamos de vernos"
+  },
+  {
+    "fecha": "2026-11-25",
+    "texto": "Que no tienes que ser perfecta para ver lo maravillosa que eres"
   }
 ];
